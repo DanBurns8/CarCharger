@@ -19,11 +19,11 @@ public class CarCharger {
      */
     public int getChargingCost(int startHour, int numHours){
         int cost=0;
-        int strHr=startHour;
+        int sHr=startHour;
         int total=startHour+numHours;
         for(int i=0; i<numHours; i++){
-            if(strHr>=24){strHr-=24;}
-            cost+=rateTable[strHr];
+            if(sHr>=24){sHr=0;}
+            cost+=rateTable[sHr];
         }
         return cost;
     }
@@ -66,3 +66,13 @@ public class CarCharger {
 
     }
 }
+//        Charging costs
+//        12 1, 40
+//        0, 2, 100
+//        22, 7, 560
+//        22, 30, 2400
+//        Best start Time
+//        1 12
+//        2 12
+//        7 12
+//        30 12
